@@ -49,14 +49,15 @@ module.exports.sendMail = (event, context, callback) => {
     ReplyToAddresses: [replyToString]
   };
 
-  console.log(emailParams)
+  console.log(emailParams);
 
 // the response to send back after email success.
   const response = {
     statusCode: 200,
-    body: JSON.stringify({
+    body: {
+      success: true,
       message: 'Mail sent successfully'
-    }),
+    },
   };
 
 // The sendEmail function taking the emailParams and sends the email requests.
